@@ -13,12 +13,18 @@ int main()
 	StrArray.Push(new std::string("Osaka"));
 	std::cout << StrArray;
 
-	std::cout << StrArray.Last() << std::endl;
-	std::cout << StrArray.Get(3) << std::endl;
+	StrArray.Shrink();
+	std::cout << StrArray;
 
 	StrArray.Sort();
 	std::cout << StrArray;
 
-	StrArray.Shrink();
-	std::cout << StrArray;
+	// std::cout << StrArray.Last() << std::endl;
+	// std::cout << StrArray.GetPtr(3) << std::endl;
+
+	// StrArray.Sort();
+	// std::cout << StrArray;
+
+	// StrArray.Shrink();
+	// std::cout << StrArray;
 }
