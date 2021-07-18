@@ -18,9 +18,12 @@
     <ClInclude Include="TDArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TDABase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
