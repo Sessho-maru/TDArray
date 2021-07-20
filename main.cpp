@@ -51,7 +51,37 @@ int main()
 		StrArray.Push(new std::string("Osaka"));
 		std::cout << StrArray;
 
-		// StrArray.Bubble();
+		StrArray.Bubble();
+		std::cout << StrArray;
+
+	}
+
+	{
+
+		TDArray<std::string> StrArray;
+		StrArray.Init(8);
+		StrArray.Push(std::string("Sakaki"));
+		StrArray.Push(std::string("Nyamo"));
+		StrArray.Push(std::string("Chiyo"));
+		StrArray.Push(std::string("Tomo"));
+		StrArray.Push(std::string("Yomi"));
+		StrArray.Push(std::string("Kaori"));
+		StrArray.Push(std::string("Osaka9"));
+		StrArray.Push(std::string("Osaka8"));
+		StrArray.Push(std::string("Osaka7"));
+		StrArray.Push(std::string("Osaka6"));
+		StrArray.Push(std::string("Osaka5"));
+		StrArray.Push(std::string("Osaka4"));
+		StrArray.Push(std::string("Osaka3"));
+		StrArray.Push(std::string("Osaka2"));
+		StrArray.Push(std::string("Osaka1"));
+		StrArray.Push(std::string("Osaka0"));
+		std::cout << StrArray;
+
+		StrArray.Push(std::string("Osaka"));
+		std::cout << StrArray;
+
+		StrArray.Bubble();
 		std::cout << StrArray;
 
 	}

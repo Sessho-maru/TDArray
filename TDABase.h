@@ -75,13 +75,6 @@ protected:
 		return mArr;
 	}
 
-	void Swap(ElementType* x, ElementType* y)
-	{
-		ElementType temp = *y;
-		*y = *x;
-		*x = temp;
-	}
-
 	void SetSorted(const bool NewSorted)
 	{
 		mSorted = NewSorted;

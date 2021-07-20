@@ -36,7 +36,7 @@ public:
 			{
 				if (Get(j + 1) < Get(j))
 				{
-					this->Swap(&(GetMutable(j + 1)), &(GetMutable(j)));
+					Swap(&(GetMutable(j + 1)), &(GetMutable(j)));
 				}
 			}
 		}
@@ -50,6 +50,12 @@ private:
 		return this->GetArrMutable()[Position];
 	}
 
+	void Swap(ElementType* x, ElementType* y)
+	{
+		ElementType temp = *y;
+		*y = *x;
+		*x = temp;
+	}
 };
 
 template <typename ElementType>
@@ -86,7 +92,7 @@ public:
 			{
 				if (Get(j + 1) < Get(j))
 				{
-					this->Swap(&(GetMutable(j + 1)), &(GetMutable(j)));
+					Swap(&(GetMutable(j + 1)), &(GetMutable(j)));
 				}
 			}
 		}
@@ -97,9 +103,15 @@ public:
 private:
 	ElementType& GetMutable(const unsigned int Position)
 	{
-		return this->GetArrMutable()[Position];
+		return *this->GetArrMutable()[Position];
 	}
 
+	void Swap(ElementType* x, ElementType* y)
+	{
+		ElementType temp = *y;
+		*y = *x;
+		*x = temp;
+	}
 };
 
 template<typename ElementType>
