@@ -2,12 +2,14 @@
 #include <iostream>
 #include "TDABase.h"
 
+#define LAST_INDEX (this->mSize - 1)
+
 template <typename ElementType>
 class TDArray final : public TDABase<ElementType>
 {
 public:
-	TDArray()
-		: TDABase<ElementType>()
+	TDArray(const unsigned int Capacity)
+		: TDABase<ElementType>(Capacity)
 	{}
 
 	~TDArray() {}
@@ -17,22 +19,34 @@ public:
 		return this->GetArr()[Position];
 	}
 
+	void Set(const unsigned int Position, const ElementType& Parameter)
+	{
+		GetMutable(Position) = Parameter;
+		return;
+	}
+
 	const ElementType& Last() const
 	{
-		return this->GetArr()[this->GetSize() - 1];
+		return this->GetArr()[LAST_INDEX];
+	}
+
+	ElementType Pop()
+	{
+		ElementType Element = Last();
+		this->mSize = this->mSize - 1;
+		return Element;
 	}
 
 	void Bubble()
 	{
-		if (this->IsSorted() == true)
+		if (this->mSorted == true)
 		{
 			return;
 		}
 
-		unsigned int Size = this->GetSize();
-		for (unsigned int i = 0; i < Size - 1; ++i)
+		for (unsigned int i = 0; i < LAST_INDEX; ++i)
 		{
-			for (unsigned int j = 0; j < (Size - 1) - i; ++j)
+			for (unsigned int j = 0; j < (LAST_INDEX) - i; ++j)
 			{
 				if (Get(j + 1) < Get(j))
 				{
@@ -41,7 +55,7 @@ public:
 			}
 		}
 
-		this->SetSorted(true);
+		this->mSorted = true;
 	}
 
 private:
@@ -52,9 +66,9 @@ private:
 
 	void Swap(ElementType* x, ElementType* y)
 	{
-		ElementType temp = *y;
+		ElementType Temp = *y;
 		*y = *x;
-		*x = temp;
+		*x = Temp;
 	}
 };
 
@@ -62,33 +76,53 @@ template <typename ElementType>
 class TDArray<ElementType*> final : public TDABase<ElementType*>
 {
 public:
-	TDArray()
-		: TDABase<ElementType*>()
+	TDArray(const unsigned int Capacity)
+		: TDABase<ElementType*>(Capacity)
 	{}
 
-	~TDArray() {}
+	~TDArray()
+	{
+		auto Arr = this->GetArr();
+		for (unsigned int i = 0; i < this->mSize; ++i)
+		{
+			delete Arr[i];
+		}
+	}
 
 	const ElementType& Get(const unsigned int Position) const
 	{
 		return *this->GetArr()[Position];
 	}
 
+	void Set(const unsigned int Position, const ElementType& Element)
+	{
+		GetMutable(Position) = Element;
+		return;
+	}
+
 	const ElementType& Last() const
 	{
-		return *this->GetArr()[this->GetSize() - 1];
+		return *this->GetArr()[LAST_INDEX];
+	}
+
+	ElementType Pop()
+	{
+		ElementType Element = Last();
+		delete this->GetArr()[LAST_INDEX];
+		this->mSize = this->mSize - 1;
+		return Element;
 	}
 
 	void Bubble()
 	{
-		if (this->IsSorted() == true)
+		if (this->mSorted == true)
 		{
 			return;
 		}
 
-		unsigned int Size = this->GetSize();
-		for (unsigned int i = 0; i < Size - 1; ++i)
+		for (unsigned int i = 0; i < LAST_INDEX; ++i)
 		{
-			for (unsigned int j = 0; j < (Size - 1) - i; ++j)
+			for (unsigned int j = 0; j < (LAST_INDEX) - i; ++j)
 			{
 				if (Get(j + 1) < Get(j))
 				{
@@ -97,7 +131,7 @@ public:
 			}
 		}
 
-		this->SetSorted(true);
+		this->mSorted = true;
 	}
 
 private:
@@ -108,9 +142,9 @@ private:
 
 	void Swap(ElementType* x, ElementType* y)
 	{
-		ElementType temp = *y;
+		ElementType Temp = *y;
 		*y = *x;
-		*x = temp;
+		*x = Temp;
 	}
 };
 
@@ -121,15 +155,15 @@ std::ostream& operator<<(std::ostream& Os, const TDArray<ElementType>& TDArray)
 
 	Os << "capacity: " << TDArray.GetCapacity() << std::endl
 		<< "size: " << Size << std::endl
-		<< TDArray.IsSorted() << std::endl;
+		<< "isSorted: " << std::boolalpha << TDArray.IsSorted() << std::endl;
 
-	Os << "++++++++++++" << std::endl;
+	Os << "+++++++++++++++" << std::endl;
 
 	for (unsigned int Index = 0; Index < Size; ++Index)
 	{
 		Os << "[ " << Index << " ] => " << std::endl << "\t" << TDArray.Get(Index) << std::endl;
 	}
 
-	Os << "============" << std::endl << std::endl;
+	Os << "===============" << std::endl << std::endl;
 	return Os;
 }

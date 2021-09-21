@@ -2,34 +2,29 @@
 #include "TDArray.h"
 #include <string>
 
-int main()
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+
+void TDA()
 {
-	/*
-	TDArray<int> IntVArray;
-	IntVArray.Init(8);
-	IntVArray.Push(1);
-	std::cout << IntVArray.Get(0);
-
-	TDArray<int*> IntPArray;
-	IntPArray.Init(8);
-	IntPArray.Push(new int(1));
-	std::cout << IntPArray.Get(0);
-
-	TDArray<std::string> StrVArray;
-	StrVArray.Init(8);
-	StrVArray.Push(std::string("test"));
-	std::cout << StrVArray.Get(0);
-
-	TDArray<std::string*> StrPArray;
-	StrPArray.Init(8);
-	StrPArray.Push(new std::string("test"));
-	std::cout << StrPArray.Get(0);
-	*/
-
 	{
+		/*
+		TDArray<int*> intArray(3);
+		intArray.Push(new int(9));
+		intArray.Push(new int(6));
+		intArray.Push(new int(3));
+		intArray.Push(new int(12));
 
-		TDArray<std::string*> StrArray;
-		StrArray.Init(8);
+		intArray.Bubble();
+
+		std::cout << intArray;
+		*/
+	}
+	
+	{
+		/*
+		TDArray<std::string*> StrArray(8);
 		StrArray.Push(new std::string("Sakaki"));
 		StrArray.Push(new std::string("Nyamo"));
 		StrArray.Push(new std::string("Chiyo"));
@@ -46,96 +41,72 @@ int main()
 		StrArray.Push(new std::string("Osaka2"));
 		StrArray.Push(new std::string("Osaka1"));
 		StrArray.Push(new std::string("Osaka0"));
-		std::cout << StrArray;
 
-		StrArray.Push(new std::string("Osaka"));
-		std::cout << StrArray;
-
-		StrArray.Bubble();
-		std::cout << StrArray;
-
-	}
-
-	{
-
-		TDArray<std::string> StrArray;
-		StrArray.Init(8);
-		StrArray.Push(std::string("Sakaki"));
-		StrArray.Push(std::string("Nyamo"));
-		StrArray.Push(std::string("Chiyo"));
-		StrArray.Push(std::string("Tomo"));
-		StrArray.Push(std::string("Yomi"));
-		StrArray.Push(std::string("Kaori"));
-		StrArray.Push(std::string("Osaka9"));
-		StrArray.Push(std::string("Osaka8"));
-		StrArray.Push(std::string("Osaka7"));
-		StrArray.Push(std::string("Osaka6"));
-		StrArray.Push(std::string("Osaka5"));
-		StrArray.Push(std::string("Osaka4"));
-		StrArray.Push(std::string("Osaka3"));
-		StrArray.Push(std::string("Osaka2"));
-		StrArray.Push(std::string("Osaka1"));
-		StrArray.Push(std::string("Osaka0"));
-		std::cout << StrArray;
-
-		StrArray.Push(std::string("Osaka"));
-		std::cout << StrArray;
+		std::cout << StrArray.Last() << std::endl;
+		std::cout << StrArray.Get(5) << std::endl;
 
 		StrArray.Bubble();
+		std::cout << StrArray.Get(5) << std::endl;
+
+		std::cout << std::endl << std::endl << std::endl;
+		StrArray.Shrink();
 		std::cout << StrArray;
-
-	}
-
-	{
-		/*
-		TDArray<std::string> StackStrArray;
-		StackStrArray.Init(8);
-		StackStrArray.Push(std::string("Sakaki"));
-		StackStrArray.Push(std::string("Nyamo"));
-		StackStrArray.Push(std::string("Chiyo"));
-		StackStrArray.Push(std::string("Tomo"));
-		StackStrArray.Push(std::string("Yomi"));
-		StackStrArray.Push(std::string("Osaka"));
-		std::cout << StackStrArray;
-
-		StackStrArray.Shrink();
-		// StackStrArray.Bubble();
-
-		std::cout << StackStrArray;
 		*/
 	}
 
 	{
-		/*
-		TDArray<int*> intArray;
-		intArray.Init(8);
-		intArray.Push(new int(6));
-		intArray.Push(new int(5));
-		intArray.Push(new int(4));
-		intArray.Push(new int(3));
-		intArray.Push(new int(2));
-		intArray.Push(new int(1));
-		std::cout << intArray;
+	
+		TDArray<std::string*> StrArray(8);
+		StrArray.Push(new std::string("Sakaki"));
+		StrArray.Push(new std::string("Nyamo"));
+		StrArray.Push(new std::string("Chiyo"));
+		StrArray.Push(new std::string("Tomo"));
+		StrArray.Push(new std::string("Yomi"));
+		StrArray.Push(new std::string("Kaori"));
+		StrArray.Push(new std::string("Osaka9"));
+		StrArray.Push(new std::string("Osaka8"));
+		StrArray.Push(new std::string("Osaka7"));
+		StrArray.Push(new std::string("Osaka6"));
+		StrArray.Push(new std::string("Osaka5"));
+		StrArray.Push(new std::string("Osaka4"));
+		StrArray.Push(new std::string("Osaka3"));
+		StrArray.Push(new std::string("Osaka2"));
+		StrArray.Push(new std::string("Osaka1"));
+		StrArray.Push(new std::string("Osaka0"));
+		StrArray.Push(new std::string("Kimura"));
 
-		intArray.Sort();
-		std::cout << intArray;
-		*/
+		std::string a = StrArray.Pop();
+		std::cout << a << std::endl;
+
+		StrArray.Pop();
+		StrArray.Pop();
+		StrArray.Pop();
+		StrArray.Pop();
+		StrArray.Pop();
+		StrArray.Pop();
+		StrArray.Pop();
+		StrArray.Pop();
+		StrArray.Pop();
+		StrArray.Pop();
+
+		StrArray.Push(new std::string("Kagura"));
+
+		StrArray.Set(StrArray.GetSize() - 1, std::string("Osaka"));
+		StrArray.Set(0, std::string(" "));
+
+		StrArray.Shrink();
+		std::cout << StrArray;
+		
 	}
+}
 
-	{
-		/*
-		TDArray<int> StackintArray;
-		StackintArray.Init(8);
-		StackintArray.Push(6);
-		StackintArray.Push(5);
-		StackintArray.Push(4);
-		StackintArray.Push(3);
-		StackintArray.Push(2);
-		StackintArray.Push(1);
-		std::cout << StackintArray;
+int main()
+{
+	
+	TDA();
 
-		StackintArray.Sort();
-		std::cout << StackintArray;
-		*/
-	}
+	_CrtDumpMemoryLeaks();
+
+	return 0;
+
 }

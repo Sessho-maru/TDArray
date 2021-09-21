@@ -5,22 +5,9 @@ template <typename ElementType>
 class TDABase
 {
 public:
-	TDABase()
-		: mCapacity(0)
-		, mSize(0)
-		, mArr(nullptr)
-		, mSorted(false)
-	{}
-
 	virtual ~TDABase()
 	{
 		delete[] mArr;
-	}
-
-	void Init(const unsigned int Number)
-	{
-		mArr = new ElementType[Number];
-		mCapacity = Number;
 	}
 
 	void Push(const ElementType& Element)
@@ -49,8 +36,8 @@ public:
 			return false;
 		}
 
-		const ElementType* temp = mArr;
-		Move(temp, NewCapacity);
+		const ElementType* Temp = mArr;
+		Move(Temp, NewCapacity);
 		mCapacity = NewCapacity;
 		return true;
 	}
@@ -70,17 +57,28 @@ public:
 	const bool IsSorted() const { return mSorted; }
 
 protected:
+	TDABase(const unsigned int Capacity)
+		: mSize(0)
+		, mSorted(false)
+	{
+		Init(Capacity);
+	}
+
 	ElementType* GetArrMutable()
 	{
 		return mArr;
 	}
 
-	void SetSorted(const bool NewSorted)
-	{
-		mSorted = NewSorted;
-	}
+	unsigned int mSize;
+	bool mSorted;
 
 private:
+	void Init(const unsigned int Capacity)
+	{
+		mArr = new ElementType[Capacity];
+		mCapacity = Capacity;
+	}
+
 	void Move(const ElementType* temp, const unsigned int NewCapacity)
 	{
 		mArr = new ElementType[NewCapacity];
@@ -92,7 +90,5 @@ private:
 	}
 
 	unsigned int mCapacity;
-	unsigned int mSize;
 	ElementType* mArr;
-	bool mSorted;
 };
