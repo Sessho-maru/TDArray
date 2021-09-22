@@ -76,7 +76,6 @@ void TDA()
 		StrArray.Push(new std::string("Kimura"));
 
 		std::string a = StrArray.Pop();
-		std::cout << a << std::endl;
 
 		StrArray.Pop();
 		StrArray.Pop();
@@ -88,13 +87,16 @@ void TDA()
 		StrArray.Pop();
 		StrArray.Pop();
 		StrArray.Pop();
+		StrArray.Last();
+
+		StrArray[0] = "Test";
 
 		StrArray.Push(new std::string("Kagura"));
 
-		StrArray.Set(StrArray.GetSize() - 1, std::string("Osaka"));
-		StrArray.Set(0, std::string(" "));
-
 		StrArray.Shrink();
+		std::cout << StrArray;
+
+		StrArray.Bubble();
 		std::cout << StrArray;
 		
 	}

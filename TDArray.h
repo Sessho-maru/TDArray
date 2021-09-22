@@ -14,15 +14,14 @@ public:
 
 	~TDArray() {}
 
+	ElementType& operator[](const unsigned int Position) const
+	{
+		return const_cast<ElementType&>(this->GetArr()[Position]);
+	}
+
 	const ElementType& Get(const unsigned int Position) const
 	{
 		return this->GetArr()[Position];
-	}
-
-	void Set(const unsigned int Position, const ElementType& Parameter)
-	{
-		GetMutable(Position) = Parameter;
-		return;
 	}
 
 	const ElementType& Last() const
@@ -89,15 +88,14 @@ public:
 		}
 	}
 
-	const ElementType& Get(const unsigned int Position) const
+	ElementType& operator[](const unsigned int Position) const
 	{
 		return *this->GetArr()[Position];
 	}
 
-	void Set(const unsigned int Position, const ElementType& Element)
+	const ElementType& Get(const unsigned int Position) const
 	{
-		GetMutable(Position) = Element;
-		return;
+		return *this->GetArr()[Position];
 	}
 
 	const ElementType& Last() const

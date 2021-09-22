@@ -79,14 +79,14 @@ private:
 		mCapacity = Capacity;
 	}
 
-	void Move(const ElementType* temp, const unsigned int NewCapacity)
+	void Move(const ElementType* Temp, const unsigned int NewCapacity)
 	{
 		mArr = new ElementType[NewCapacity];
 		for (unsigned int Index = 0; Index < mSize; ++Index)
 		{
-			*(mArr + Index) = *(temp + Index);
+			*(mArr + Index) = *(Temp + Index);
 		}
-		delete[] temp;
+		delete[] Temp;
 	}
 
 	unsigned int mCapacity;
