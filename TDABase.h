@@ -64,10 +64,7 @@ protected:
 		Init(Capacity);
 	}
 
-	ElementType* GetArrMutable()
-	{
-		return mArr;
-	}
+	ElementType* GetArrMutable() const { return mArr; }
 
 	unsigned int mSize;
 	bool mSorted;

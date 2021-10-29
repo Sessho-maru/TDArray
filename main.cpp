@@ -9,7 +9,6 @@
 void TDA()
 {
 	{
-		/*
 		TDArray<int*> intArray(3);
 		intArray.Push(new int(9));
 		intArray.Push(new int(6));
@@ -19,11 +18,9 @@ void TDA()
 		intArray.Bubble();
 
 		std::cout << intArray;
-		*/
 	}
 	
 	{
-		/*
 		TDArray<std::string*> StrArray(8);
 		StrArray.Push(new std::string("Sakaki"));
 		StrArray.Push(new std::string("Nyamo"));
@@ -51,11 +48,9 @@ void TDA()
 		std::cout << std::endl << std::endl << std::endl;
 		StrArray.Shrink();
 		std::cout << StrArray;
-		*/
 	}
 
 	{
-	
 		TDArray<std::string*> StrArray(8);
 		StrArray.Push(new std::string("Sakaki"));
 		StrArray.Push(new std::string("Nyamo"));
@@ -98,7 +93,6 @@ void TDA()
 
 		StrArray.Bubble();
 		std::cout << StrArray;
-		
 	}
 }
 
