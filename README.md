@@ -33,15 +33,15 @@
 * [*void* &nbsp;&nbsp;Push &nbsp;( **const T&** ) &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDABase.h#L13-L22) : public
     -
     - Push passed T& parameter into `mArr`
-    - If this call causes exceeding `mCapacity`, then it calls ResizeTo() to make it double
+    - If this call causes exceeding `mCapacity`, then it invokes ResizeTo() to make current allocation size double
 * [*const bool* &nbsp;&nbsp;ResizeTo &nbsp;( **const unsigned int** ) &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDABase.h#L32-L43) : public
     -
     - Reallocate memory with capacity specified as parameter
-    - Copy all elements from existing memory area into reallocated one
+    - Move all elements on the existing memory area into the area newly allocataed
 * [*const bool* &nbsp;&nbsp;Shrink &nbsp;() &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDABase.h#L45-L52) : public
     -
     - Reduce `mCapacity` into current `mSize`
-    - Any memory deallocation doesn't take place. so, the area get shrinked be overwritten as new parameter pushed
+    - Any memory deallocation doesn't take place and the area get shrinked be overwritten when the new parameter is pushed
 * [*T** &nbsp;&nbsp;GetArrMutable &nbsp;() &nbsp;const &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDABase.h#L67) : protected
     -
     - Non-const version `mArr` getter
