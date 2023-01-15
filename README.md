@@ -37,7 +37,7 @@
 * [*const bool* &nbsp;&nbsp;ResizeTo &nbsp;( **const unsigned int** ) &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDABase.h#L32-L43) : public
     -
     - Reallocate memory with capacity specified as parameter
-    - Move all elements on the existing memory area into the area newly allocataed
+    - Move all elements on the existing memory area into the area newly allocated
 * [*const bool* &nbsp;&nbsp;Shrink &nbsp;() &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDABase.h#L45-L52) : public
     -
     - Reduce `mCapacity` into current `mSize`
