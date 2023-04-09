@@ -25,7 +25,7 @@
 * [&nbsp;&nbsp;TDABase &nbsp;( **const unsigned int** ) &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDABase.h#L60-L65) : protected
     -
     - Constructor
-    - TDBase only can be initialized from TDArray
+    - TDBase only can be initialized via TDArray
 * [&nbsp;&nbsp;~TDABase &nbsp;() &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDABase.h#L8-L11) : public
     -
     - Virtual destructor
