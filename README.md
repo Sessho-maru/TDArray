@@ -41,7 +41,7 @@
 * [*const bool* &nbsp;&nbsp;Shrink &nbsp;() &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDABase.h#L45-L52) : public
     -
     - Reduce `mCapacity` into current `mSize`
-    - Any memory deallocation doesn't take place and the area get shrinked will be overwritten when the new parameter is pushed
+    - Any memory deallocation doesn't take place and the area get shrinked will be overwritten when the new argument is pushed
 * [*T** &nbsp;&nbsp;GetArrMutable &nbsp;() &nbsp;const &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDABase.h#L67) : protected
     -
     - Non-const version `mArr` getter
