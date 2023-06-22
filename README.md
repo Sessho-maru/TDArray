@@ -1,6 +1,6 @@
 # Dynamic array implementation using template C++
 - Template specialization for pointer type 
-- Support some utility functions
+- Including some utility functions
 
 ## Specifications
 ### TDBase \<typename T\>
