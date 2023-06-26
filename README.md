@@ -41,7 +41,7 @@
 * [*const bool* &nbsp;&nbsp;Shrink &nbsp;() &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDABase.h#L45-L52) : public
     -
     - Reduce `mCapacity` into current `mSize`
-    - Memory deallocation will be taken place on the each space be supposed to get shrinked 
+    - Memory deallocation will be taken place on the each space is supposed to get shrinked 
 * [*T** &nbsp;&nbsp;GetArrMutable &nbsp;() &nbsp;const &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDABase.h#L67) : protected
     -
     - Non-const version `mArr` getter
