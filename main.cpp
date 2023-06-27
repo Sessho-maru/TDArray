@@ -9,13 +9,14 @@
 void TDA()
 {
 	{
-		TDArray<int*> intArray(3);
-		intArray.Push(new int(9));
-		intArray.Push(new int(6));
-		intArray.Push(new int(3));
-		intArray.Push(new int(12));
+		TDArray<int> intArray(3);
+		intArray.Push(9);
+		intArray.Push(6);
+		intArray.Push(3);
+		intArray.Push(12);
 
-		intArray.Bubble();
+		intArray.Shrink();
+		intArray[6] = 3;
 
 		std::cout << intArray;
 	}

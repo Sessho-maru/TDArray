@@ -16,6 +16,11 @@ public:
 
 	ElementType& operator[](const unsigned int Position) const
 	{
+		if (Position >= this->mSize)
+		{
+			throw std::out_of_range("Out of Index: Position can't not be greater than or equal to mSize");
+		}
+
 		return const_cast<ElementType&>(this->GetArr()[Position]);
 	}
 
