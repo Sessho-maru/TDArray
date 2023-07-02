@@ -57,19 +57,19 @@
 * [&nbsp;&nbsp;~TDArray &nbsp;() &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDArray.h#L82-L89) : public
     -   
     - Deallocates all of allocated memory spaces via each pointer type element in `mArr`
-* [&nbsp;&nbsp;const T& Get &nbsp;( **const unsigned int** ) &nbsp;const](https://github.com/Sessho-maru/TDArray/blob/master/TDArray.h#L96-L99) : public
+* [*const T&* Get &nbsp;( **const unsigned int** ) &nbsp;const](https://github.com/Sessho-maru/TDArray/blob/master/TDArray.h#L96-L99) : public
     -   
     - Return the element from `mArr` whose index is specified as parameter
-* [&nbsp;&nbsp;const T& Last &nbsp;() &nbsp;const](https://github.com/Sessho-maru/TDArray/blob/master/TDArray.h#L101-L104) : public
+* [*const T&* Last &nbsp;() &nbsp;const](https://github.com/Sessho-maru/TDArray/blob/master/TDArray.h#L101-L104) : public
     -   
     - Return the tail element from `mArr`
-* [&nbsp;&nbsp;T Pop &nbsp;() &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDArray.h#L106-L112) : public
+* [*T* Pop &nbsp;() &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDArray.h#L106-L112) : public
     -   
     - Return the tail element from `mArr` and deallocates that portion
-* [&nbsp;&nbsp;void Bubble &nbsp;() &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDArray.h#L114-L133) : public
+* [*void* Bubble &nbsp;() &nbsp;](https://github.com/Sessho-maru/TDArray/blob/master/TDArray.h#L114-L133) : public
     -   
     - Executes bubble sort algorithm, then sets `mSorted` to true
-* [&nbsp;&nbsp;T& operator\[\] &nbsp;( **const unsigned int** ) &nbsp;const](https://github.com/Sessho-maru/TDArray/blob/master/TDArray.h#L91-L94) : public
+* [*T&* operator\[\] &nbsp;( **const unsigned int** ) &nbsp;const](https://github.com/Sessho-maru/TDArray/blob/master/TDArray.h#L91-L94) : public
     -
     - Operator[] overloading
     - Non-const conversion of Get()
